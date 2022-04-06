@@ -6,3 +6,18 @@ BIGLIETTO DEL TRENO - PROCEDIMENTO:
   4* l'importo finale verrà poi mostrato e nella sua completezza dei calcoli da far capire all'utente il perchè di quel prezzo 
 */
 
+let distanceKm = prompt ("Prego, inserisca il numero di km che deve percorrere")
+const priceForKm = 0.21;
+let totPriceKm = distanceKm * priceForKm 
+
+console.log(distanceKm, priceForKm, totPriceKm);
+
+document.getElementById("biglietto").innerHTML =
+`
+<ul class="text-center">
+    <li><h3>Dati inseriti:</h3></li>
+    <li>Numero Km: ${distanceKm} km</li>
+    <li>Costo euro per Km: ${priceForKm} €/km</li>
+    <li>Prezzo totale del biglietto: ${totPriceKm} €</li>
+  </ul>
+`
