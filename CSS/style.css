@@ -1,5 +1,13 @@
+body {
+  background-image: url(/IMG/niyas-ck-final-train-yard.jpg);
+}
+
 header {
   background-color: #b40000;
+}
+
+section {
+  background-color: #FFFFFF;
 }
 
 ul {

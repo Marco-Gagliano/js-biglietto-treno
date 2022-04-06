@@ -28,7 +28,7 @@ if (yourAge < 18){
   priceTicket = totPriceKm;
 }
 
-const totalTicket = priceTicket.toFixed(2)
+let totalTicket = priceTicket.toFixed(2)
 
 console.log(totalTicket);
 
