@@ -6,32 +6,45 @@ BIGLIETTO DEL TRENO - PROCEDIMENTO:
   4* l'importo finale verrà poi mostrato e nella sua completezza dei calcoli da far capire all'utente il perchè di quel prezzo 
 */
 
-let distanceKm = prompt ("Prego, inserisca il numero di km che deve percorrere")
+let distanceKm = prompt ("Prego, inserisca il numero di km che deve percorrere");
 const priceForKm = 0.21;
-let totPriceKm = distanceKm * priceForKm
-let priceTicket = totPriceKm.toFixed(2)
+let totPriceKm = distanceKm * priceForKm;
+let priceTicket = totPriceKm.toFixed(2);
+
 
 console.log(distanceKm, priceForKm, totPriceKm, priceTicket);
 
 
+alert ("In base alla sua età, potrebbe essere un applicato uno sconto sul prezzo del biglieto: 20% se ha meno di 18 anni, 40% se ha più di 65 anni");
 
 
-alert ("In base alla sua età, potrebbe essere un applicato uno sconto sul prezzo del biglieto: il 20% se ha meno di 18 anni, il 40% se ha più di 65 anni")
-
-let yourAge = prompt ("Prego, inserisca la età")
+let yourAge = prompt ("Prego, inserisca la età");
+let saleUnder = false;
+let saleOver = false;
 
 if (yourAge < 18){
+
   priceTicket = totPriceKm - (totPriceKm * 20 / 100);
+  saleUnder = true;
+  alert ("Sconto del 20% applicato");
+
+
 } else if (yourAge > 65){
+
   priceTicket = totPriceKm - (totPriceKm * 40 / 100);
+  saleOver = true;
+  alert ("Sconto del 40% applicato");
+
+
 } else{
+  
   priceTicket = totPriceKm;
+  alert ("Nessun sconto applicato");
 }
 
-let totalTicket = priceTicket.toFixed(2)
+let totalTicket = priceTicket.toFixed(2);
 
 console.log(totalTicket);
-
 
 document.getElementById("ticket-train").innerHTML =
 
@@ -44,14 +57,12 @@ document.getElementById("ticket-train").innerHTML =
     <li>Prezzo del biglietto: ${priceTicket} €</li>
   </ul>
 
-
   <ul>
     <li><h3>Sconto Applicabile:<h3></li>
     <li>Età inserita: ${yourAge} anni</li>
-    <li>Sconto del 20%: </li>
-    <li>Sconto del 40%: </li>
+    <li>Sconto del 20%: ${saleUnder}</li>
+    <li>Sconto del 40%: ${saleOver}</li>
   </ul>
-
 
   <ul>
     <li><h3>Prezzo Totale: ${totalTicket} €<h3></li>
@@ -59,3 +70,4 @@ document.getElementById("ticket-train").innerHTML =
   </ul>
 <div>
 `
+
